@@ -1,5 +1,31 @@
 # LPS Cluster
 
+## Clearing a machine
+In order to set up a cluster, machines have to be clear. To do that, run the script on `clear_machine/`:
+
+### Option 1 - without git
+* Get root privileges:
+	```
+	sudo -i
+	```
+* Just copy and paste the command lines inside the script to your CLI.
+
+### Option 2 - with git
+* Clone this repository:
+	```
+	git clone https://github.com/gabriel-milan/lps-utils
+	```
+* Go to the script directory:
+	```
+	cd lps-utils/clear_machine/
+	```
+* Run it:
+	```
+	sudo ./clear.sh
+	```
+
+
+
 ## Setting up a node
 In order to set up a new node, you will need to have a just-formatted machine running CentOS (preferably) and root privileges.
 
@@ -26,7 +52,7 @@ The script on `new_node/` will make most of the stuff needed to set up the node,
 	```
 * Run it:
 	```
-	bash initial_setup.sh
+	sudo ./initial_setup.sh
 	```
 
 ### Last steps
