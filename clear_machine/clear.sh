@@ -15,6 +15,14 @@ else
   docker rm -f $CLIST
 fi
 
+echo "Clearing docker networks..."
+NLIST=$(docker network ls -q)
+if [ "x"$NLIST == "x" ]; then
+  echo "No networks exist - skipping..."
+else
+  docker network rm $NLIST
+fi
+
 echo "Clearing docker images..."
 ILIST=$(docker images -a -q)
 if [ "x"$ILIST == "x" ]; then
