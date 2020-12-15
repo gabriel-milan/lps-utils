@@ -28,7 +28,7 @@ ILIST=$(docker images -a -q)
 if [ "x"$ILIST == "x" ]; then
   echo "No images exist - skipping image cleanup"
 else
-  docker rmi $ILIST
+  docker rmi -f $ILIST
 fi
 
 echo "Clearing docker volumes..."
